@@ -11,11 +11,11 @@ def go_to_cafe(friends: list, cafe: Cafe) -> str:
         try:
 
             cafe.visit_cafe(visitor=friend)
+
         except VaccineError:
             return "All friends should be vaccinated"
         except NotWearingMaskError:
-            mask_to_buy = sum([1 for friend in friends
-                              if friend.get("wearing_a_mask") is False])
+            mask_to_buy += 1
 
     if mask_to_buy:
         return f"Friends should buy {mask_to_buy} masks"

@@ -1,14 +1,30 @@
 class VaccineError(Exception):
-    pass
+    def __init__(self, message: str) -> None:
+        self.message = message
+
+    def __str__(self) -> str:
+        return self.message
 
 
 class NotVaccinatedError(VaccineError):
-    pass
+    def __init__(self, message: str) -> None:
+        self.message = message
+
+    def __str__(self) -> str:
+        return self.message
 
 
 class OutdatedVaccineError(VaccineError):
-    pass
+    def __init__(self, message: str) -> None:
+        self.message = message
+
+    def __str__(self) -> str:
+        return self.message
 
 
 class NotWearingMaskError(Exception):
-    pass
+    def __init__(self, message: str) -> None:
+        self.message = message
+
+    def __str__(self) -> str:
+        return self.message
